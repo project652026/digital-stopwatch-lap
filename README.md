@@ -74,8 +74,8 @@ docs/   → diagrams and documentation
 
  Week 1 Goals
 
-Set up GitHub repository
-Define system architecture
-Create block diagram
-Prepare XDC constraints file
+Set up GitHub repository/
+Define system architecture/
+Create block diagram/
+Prepare XDC constraints file/
 Initialize project structure
