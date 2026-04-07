@@ -2,11 +2,11 @@
  
 Team Members
 
-Aktilek Abylaikyzy 
+- Aktilek Abylaikyzy 
 
-Htet Oo Khin 
+- Htet Oo Khin 
 
-Zar Ni Tun
+- Zar Ni Tun
 
 Project Description
 
@@ -14,7 +14,7 @@ This project implements a digital stopwatch with lap functionality on the Nexys 
 
 The stopwatch measures time and displays it on a 7-segment display. Users can start/stop the timer, reset it, and store a lap value.
 
-Features
+ Features
 
 Start / Stop control
 
@@ -24,7 +24,7 @@ Lap time capture
 
 Real-time display on 7-segment display
 
-Inputs
+ Inputs
 
 clk → system clock (100 MHz)
 
@@ -34,7 +34,7 @@ btnC → Reset
 
 btnD → Lap
 
-Outputs
+ Outputs
 
 seg[6:0] → 7-segment segments
 
@@ -42,7 +42,7 @@ an[7:0] → display enable signals
 
 dp → decimal point
 
-Planned Modules
+ Planned Modules
 
 top → top-level module
 
@@ -56,7 +56,7 @@ lap_register → stores lap value
 
 display_driver → controls 7-segment display
 
-System Overview
+ System Overview
 
 The system is composed of several modules responsible for clock division, input processing, time counting, and display control.
 
@@ -72,14 +72,10 @@ xdc/    → FPGA constraints
 
 docs/   → diagrams and documentation  
 
-Week 1 Goals
+ Week 1 Goals
 
 Set up GitHub repository
-
 Define system architecture
-
 Create block diagram
-
 Prepare XDC constraints file
-
 Initialize project structure
