@@ -78,4 +78,4 @@ Set up GitHub repository/
 Define system architecture/
 Create block diagram/
 Prepare XDC constraints file/
-Initialize project structure/
+Initialize project structure
