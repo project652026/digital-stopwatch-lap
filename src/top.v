@@ -1,8 +1,8 @@
 module top (
     input clk,
-    input btnU,
-    input btnC,
-    input btnD,
+    input btnu,
+    input btnc,
+    input btnd,
     output [6:0] seg,
     output [7:0] an,
     output dp
