@@ -1,4 +1,5 @@
  Digital Stopwatch with Lap (Verilog)
+ 
 Team Members
 
 Aktilek Abylaikyzy 
