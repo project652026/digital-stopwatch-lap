@@ -1,7 +1,9 @@
  Digital Stopwatch with Lap (Verilog)
 Team Members
 Aktilek Abylaikyzy 
+
 Htet Oo Khin 
+
 Zar Ni Tun
 
 Project Description
