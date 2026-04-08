@@ -1,6 +1,6 @@
- Digital Stopwatch with Lap (Verilog)
+# **Digital Stopwatch with Lap (Verilog)**
  
-Team Members
+### **Team Members**
 
 - Aktilek Abylaikyzy 
 
@@ -8,13 +8,13 @@ Team Members
 
 - Zar Ni Tun
 
-Project Description
+## **Project Description**
 
 This project implements a digital stopwatch with lap functionality on the Nexys A7 FPGA board using Verilog.
 
 The stopwatch measures time and displays it on a 7-segment display. Users can start/stop the timer, reset it, and store a lap value.
 
- Features
+**Features**
 
 Start / Stop control
 
@@ -24,25 +24,19 @@ Lap time capture
 
 Real-time display on 7-segment display
 
- Inputs
+| **Port name** | **Direction** | **Type** | **Description** |
+|:------------:|:----------:|:----------:|:----------:|
+| `clk`        | input     | `wire`     | Main clock      |
+| `btnd`       | input     | `wire`     | Start / Stop     |
+| `btnu`       | input     | `wire`     | High-active synchronous reset     |
+| `btnr`       | input     | `wire`     | Lap     |
+| `seg[6:0]`    | output     | `wire [6:0]`     | Seven-segment cathodes      |
+| `an[7:0]`    | output     | `wire [7:0]`     | Seven-segment anodes     |
+| `dp`         | output     | `wire`     | Seven-segment decimal point     |
 
-clk → system clock (100 MHz)
 
-btnd → Start / Stop
 
-btnu → Reset
-
-btnr → Lap
-
- Outputs
-
-seg[6:0] → 7-segment segments
-
-an[7:0] → display enable signals
-
-dp → decimal point
-
- Planned Modules
+**Planned Modules**
 
 top → top-level module
 
@@ -56,13 +50,14 @@ lap_register → stores lap value
 
 display_driver → controls 7-segment display
 
- System Overview
+
+**System Overview**
 
 The system is composed of several modules responsible for clock division, input processing, time counting, and display control.
 
 A block diagram will be added in the docs/ folder.
 
-Project Structure
+**Project Structure**
 
 src/    → Verilog source files  
 
@@ -72,10 +67,11 @@ xdc/    → FPGA constraints
 
 docs/   → diagrams and documentation  
 
- Week 1 Goals
 
-Set up GitHub repository/
-Define system architecture/
-Create block diagram/
-Prepare XDC constraints file/
-Initialize project structure
+**Week 1 Goals:**
+
+1. Set up GitHub repository
+2. Define system architecture
+3. Create block diagram
+4. Prepare XDC constraints file
+5. Initialize project structure
