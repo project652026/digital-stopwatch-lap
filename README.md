@@ -28,11 +28,11 @@ Real-time display on 7-segment display
 
 clk → system clock (100 MHz)
 
-btnu → Start / Stop
+btnd → Start / Stop
 
-btnc → Reset
+btnu → Reset
 
-btnd → Lap
+btnr → Lap
 
  Outputs
 
