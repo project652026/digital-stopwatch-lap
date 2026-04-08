@@ -32,25 +32,26 @@ The stopwatch measures time and displays it on a **seven-segment display**. User
 | `btnd`       | input     | `wire`     | Start / Stop     |
 | `btnu`       | input     | `wire`     | Reset button     |
 | `btnr`       | input     | `wire`     | Lap button     |
+| `btnl`       | input     | `wire`     | Display stored values button |
 | `seg[6:0]`    | output     | `wire [6:0]`     | Seven-segment cathodes      |
 | `an[7:0]`    | output     | `wire [7:0]`     | Seven-segment anodes     |
 | `dp`         | output     | `wire`     | Decimal point     |
 
 
-### **Planned Modules**
+## **System Architecture**
 
-- `top` → top-level integration
-  
-- `clk_divider` → generates slower clock signals
-  
-- `debouncer` → cleans button inputs
- 
-- `stopwatch_counter` → counts elapsed time
-  
-- `lap_register` → stores lap value
-  
-- `display_driver` → controls 7-segment display  
+The system is organized as a modular design:
 
+- `clk_divider` → generates a slower clock for timing
+- `debouncer` → processes button inputs and removes noise
+- `stopwatch_counter` → tracks elapsed time
+- `lap_register` → stores captured lap values
+- `display_driver` → controls the 7-segment display
+- `top` → connects all modules together
+
+### **Data Flow**
+
+Buttons → Debouncer → Control Logic → Counter → Display Driver → 7-Segment Display
 
 ## **System Overview**
 
@@ -67,11 +68,11 @@ A block diagram will be added in the `docs/` folder and here later.
 
 - `src/`    → Verilog source files  
 
-- `sim/`    → testbenches  
+- `sim/`    → Testbenches for simulation 
 
-- `xdc/`    → FPGA constraints  
+- `xdc/`    → Constraint files for Nexys A7  
 
-- `docs/`   → diagrams and documentation  
+- `docs/`   → Block diagrams and documentation  
 
 
 ## **Week 1 Goals**
