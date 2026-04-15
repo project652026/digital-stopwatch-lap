@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module counter # ( 
-    parameter N = 4
+    parameter N = 16
 )(
     input i_clk,
     input i_rst,
