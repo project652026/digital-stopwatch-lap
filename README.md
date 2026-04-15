@@ -43,7 +43,7 @@ The stopwatch measures time and displays it on a **seven-segment display**. User
 The system is organized as a modular design:
 
 - `clk_en` → generates a slower clock for timing
-- `debouncer` → processes button inputs and removes noise
+- `debounce` → processes button inputs and removes noise
 - `stopwatch_counter` → tracks elapsed time
 - `lap_register` → stores captured lap values
 - `display_driver` → controls the 7-segment display
