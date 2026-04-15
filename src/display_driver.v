@@ -1,2 +1,74 @@
-module display_driver();
+`timescale 1ns / 1ps
+
+module display_driver(
+    input i_clk,
+    input i_rst,
+    input [7:0] i_data,
+    output [6:0] o_seg,
+    output reg [1:0] o_anode
+    );
+    
+       // Internal signals
+    wire w_en;
+    wire w_digit;
+    wire [3:0] w_bin;
+
+    // ---------------------------------------------------------
+    // Clock enable generator for refresh timing
+    // ---------------------------------------------------------
+    clk_en #(
+        .MAX (400_000)  // Adjust for flicker-free multiplexing
+                  // For simulation: 8
+    ) clock_0 (   // For implementation: 8_000_000
+        .i_clk (i_clk),
+        .i_rst (i_rst),
+        .o_ce  (w_en)
+    );
+
+    // ---------------------------------------------------------
+    // N-bit counter for digit selection
+    // ---------------------------------------------------------
+    counter #(
+        .N (1)
+    ) counter_0 (
+    
+    .i_clk (i_clk),
+    .i_rst (i_rst),
+    .i_en (w_en),
+    .o_cnt(w_digit)
+    
+    
+    
+
+        // TODO: Add instantiation of `counter`
+
+    );
+
+    // ---------------------------------------------------------
+    // Digit select multiplexer
+    // ---------------------------------------------------------
+    // w_digit = 0 -> right digit  (i_data[3:0])
+    // w_digit = 1 -> left digit   (i_data[7:4])
+    assign w_bin = (w_digit == 1'b0) ? i_data[3:0] : i_data[7:4];
+
+    // ---------------------------------------------------------
+    // 7-segment decoder
+    // ---------------------------------------------------------
+    bin2seg decoder_0 (
+    
+        .i_bin (w_bin),
+        .o_seg (o_seg)
+
+        // TODO: Add instantiation of `bin2seg`
+
+    );
+
+    // ---------------------------------------------------------
+    // Anode select (active-low)
+    // ---------------------------------------------------------
+    always @(*) begin
+        o_anode = 2'b11;          // All digits off (active-low)
+        o_anode[w_digit] = 1'b0;  // Enable selected digit
+    end
+
 endmodule
