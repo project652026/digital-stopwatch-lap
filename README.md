@@ -177,10 +177,21 @@ It converts the binary number to **decimal digits** and drives the display by:
 - `docs/`   → Block diagrams and documentation  
 
 
-## **Week 1 Goals**
+## **Lab 1 Goals: Architecture**
 
 1. Set up GitHub repository
 2. Define system architecture
 3. Create block diagram
 4. Prepare XDC constraints file
 5. Initialize project structure
+
+
+## **Lab 2 Goals: Unit Design**
+
+1. Develop individual modules
+2. Implement core unit functionality
+3. Create and run testbenches
+4. Verify modules through simulation
+5. Debug and refine unit behavior
+6. Commit progress and updates to Git
+
