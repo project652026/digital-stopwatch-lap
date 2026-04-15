@@ -62,11 +62,11 @@ The system is composed of several modules responsible for:
 - Time counting  
 - Display control
    
-### **Block Diagram**
+## **Block Diagram**
 
 <img width="903" height="575" alt="image" src="https://github.com/user-attachments/assets/077cde91-13c6-497c-aaa4-30b969ba58cd" />
 
-### **Block Diagram Explanation**
+## **Block Diagram Explanation**
  
 #### STEP 1 — `clk` (Main Clock)
  
