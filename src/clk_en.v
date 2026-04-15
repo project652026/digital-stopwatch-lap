@@ -1,7 +1,7 @@
 
 module clk_en #(
     // #() after a module name introduces a parameter list
-    parameter MAX = 4  //! Number of clock cycles between pulses
+    parameter MAX = 1_000_000  //! Number of clock cycles between pulses
 )(
     input  wire i_clk,  //! Main clock
     input  wire i_rst,  //! High-active synchronous reset
