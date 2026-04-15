@@ -49,6 +49,21 @@ The system is organized as a modular design:
 - `display_driver` → controls the 7-segment display
 - `top` → connects all modules together
 
+## **Parameter Definition**
+```
+N = 32
+CLK_FREQ = 100_000_000
+MAX = 1_000_000
+TICK_MS = 10
+```
+**Description**
+
+- `N` – Bit-width of time and lap counters (`time[N-1:0]`, `lap[N-1:0]`)
+- `CLK_FREQ` – FPGA system clock frequency (100 MHz)
+- `MAX` – Clock divider value used to generate a 10 ms enable pulse
+- `TICK_MS` – Time resolution of the stopwatch (each count = 10 ms)
+
+
 ### **Data Flow**
 
 Buttons → Debouncer → Control Logic → Counter → Display Driver → 7-Segment Display
@@ -68,7 +83,7 @@ The system is composed of several modules responsible for:
 
 ## **Block Diagram Explanation**
  
-#### STEP 1 — `clk` (Main Clock)
+#### STEP 1 — clk (Main Clock)
  
 The `clk` signal enters from the left.
 It is the **100 MHz** system clock from the FPGA board — it ticks 100 million times per second.
@@ -77,7 +92,7 @@ It fans out to **every single module** — you can see it branch at the junction
  
 ---
  
-#### STEP 2 — `clk_en` (Clock Divider)
+#### STEP 2 — clk_en (Clock Divider)
  
 100 MHz is **way too fast** to count human time directly.
  
@@ -106,7 +121,7 @@ Four buttons enter from the left:
  
 ---
  
-#### STEP 4 — `debouncer` (Button Cleaner)
+#### STEP 4 — debouncer (Button Cleaner)
  
 The `debouncer` samples each button every **10ms** (using `en_10ms`).
  
@@ -120,11 +135,13 @@ Output signals:
  
 ---
  
-#### STEP 5 — `stopwatch_counter` (Time Tracker)
+#### STEP 5 — stopwatch_counter (Time Tracker)
  
-This is the **heart** of the stopwatch.
- 
-It increments `cnt[N-1:0]` on every `en_10ms` pulse:
+This module tracks elapsed time using a counter of width `N` bits.
+- `time[N-1:0]` → current time value
+- `N = 32` (parameter defining counter size)
+
+The counter increments on every `en_10ms` pulse:
  
 | Signal | Condition | Effect |
 |:------:|:---------:|:------:|
@@ -132,13 +149,17 @@ It increments `cnt[N-1:0]` on every `en_10ms` pulse:
 | `en = 0` | — | paused |
 | `rst = 1` | — | reset to zero |
  
-Each count = **10ms**, so you can display `MM:SS.ms` by converting the binary count.
- 
-The value `time[N-1:0]` is sent to both the **display driver** and the **lap register**.
+Each increment corresponds to **10 ms**, so total time is:
+```
+time × 10 ms
+```
+The `time[N-1:0]` signal is sent to:
+- display_driver
+- lap_register
  
 ---
  
-#### STEP 6 — `lap_register` (Lap Memory)
+#### STEP 6 — lap_register (Lap Memory)
  
 When you press `btnr`, the debouncer fires `lap_btn`.
  
@@ -150,7 +171,7 @@ The stored lap value is sent to the `display_driver` and shown when `disp_btn` i
  
 ---
  
-#### STEP 7 — `display_driver` (7-Segment Output)
+#### STEP 7 — display_driver (7-Segment Output)
  
 The `display_driver` receives both `time[N-1:0]` and `lap[N-1:0]`.
  
