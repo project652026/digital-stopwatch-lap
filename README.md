@@ -224,9 +224,10 @@ The following modules were tested using testbenches from the `sim/` directory:
 
 ![Stopwatch Counter Simulation](docs/stopwatch_counter_sim.png)
 
-- Counter increments only when enabled  
-- Stops when disabled  
-- Resets correctly to zero  
+- Counter increments when `en = 1`  
+- Counter holds value when `en = 0`  
+- Reset (`rst = 1`) clears the counter to `0000`  
+- Counting resumes correctly after reset  
 
 ---
 
@@ -234,9 +235,10 @@ The following modules were tested using testbenches from the `sim/` directory:
 
 ![Lap Register Simulation](docs/lap_register_sim.png)
 
-- Lap value captured correctly on button press  
-- Stored value remains unchanged after capture  
-- Counter continues running independently  
+- Lap values are captured on each `lap_btn` pulse  
+- `lap0`, `lap1`, and `lap2` store consecutive snapshots of `time_in`  
+- `lap_count` increments with each capture (0 → 3)  
+- Stored values remain stable after being written  
 
 ---
 
