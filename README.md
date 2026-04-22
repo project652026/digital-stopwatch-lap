@@ -195,15 +195,6 @@ It converts the binary number to **decimal digits** and drives the display by:
 - `xdc/`    → Constraint files for Nexys A7  
 
 - `docs/`   → Block diagrams and documentation
- ## Simulation Results
-
-### Lap Register Simulation
-![Lap Register Simulation](<img width="1656" height="751" alt="Screenshot 2026-04-15 111025" src="https://github.com/user-attachments/assets/e36414c5-6f65-49a9-b265-11dfb5c3163d" />)
-
-
-### Stopwatch Counter Simulation
-![Stopwatch Counter Simulation](<img width="1654" height="713" alt="Screenshot 2026-04-15 112616" src="https://github.com/user-attachments/assets/bbd9cbf1-8282-488c-a2a0-98cc0a487868" />
-)
 
 
 ## **Lab 1 Goals: Architecture**
