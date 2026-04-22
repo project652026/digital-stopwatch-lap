@@ -194,7 +194,7 @@ It converts the binary number to **decimal digits** and drives the display by:
 
 ## **Simulation and Verification**
 
-Simulation was performed in Xilinx Vivado to verify the functionality of the **newly developed modules**.
+Simulation was performed in  Vivado to verify the functionality of the **newly developed modules**.
 
 > Note: Only the `stopwatch_counter` and `lap_register` modules were simulated in this lab.  
 > Other modules (`clk_en`, `debounce`, `display_driver`) were reused from previous labs without modification and were already verified earlier.
