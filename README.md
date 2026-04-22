@@ -8,6 +8,7 @@
 
 - Zar Ni Tun
 
+
 ## **Project Description**
 
 This project implements a **digital stopwatch with lap functionality** on the Nexys A7 FPGA board using Verilog.
@@ -23,6 +24,7 @@ The stopwatch measures time and displays it on a **seven-segment display**. User
 - Lap time capture
 
 - Real-time display on 7-segment display
+---
 
 ### **Top-Level I/O Ports**
 
@@ -68,6 +70,8 @@ TICK_MS = 10
 
 Buttons → Debouncer → Control Logic → Counter → Display Driver → 7-Segment Display
 
+
+
 ## **System Overview**
 
 The system is composed of several modules responsible for:
@@ -76,7 +80,9 @@ The system is composed of several modules responsible for:
 - Input processing (debouncing)  
 - Time counting  
 - Display control
-   
+
+
+
 ## **Block Diagram**
 
 <img width="1337" height="783" alt="image" src="https://github.com/user-attachments/assets/90c30d9b-7fc8-414e-bf7a-84d13e2acd8d" />
@@ -190,7 +196,7 @@ It converts the binary number to **decimal digits** and drives the display by:
 
 Simulation was performed in Xilinx Vivado to verify the functionality of the **newly developed modules**.
 
-> ⚠️ Note: Only the `stopwatch_counter` and `lap_register` modules were simulated in this lab.  
+> Note: Only the `stopwatch_counter` and `lap_register` modules were simulated in this lab.  
 > Other modules (`clk_en`, `debounce`, `display_driver`) were reused from previous labs without modification and were already verified earlier.
 
 ---
@@ -199,13 +205,13 @@ Simulation was performed in Xilinx Vivado to verify the functionality of the **n
 
 The following modules were tested using testbenches from the `sim/` directory:
 
-#### `stopwatch_counter`
+`stopwatch_counter`
 - Verified correct counting behavior with `en_10ms`
 - Tested **start/stop functionality**
 - Confirmed **reset behavior**
 - Ensured correct time increments (10 ms resolution)
 
-#### lap_register
+`lap_register`
 - Verified correct capture of time value on `lap_btn`
 - Confirmed stored value remains constant after capture
 - Ensured independence from the running counter
@@ -249,13 +255,12 @@ Simulation confirms that the `stopwatch_counter` and `lap_register` modules beha
 
 ## **Project Structure**
 
-- `src/`    → Verilog source files  
-
-- `sim/`    → Testbenches for simulation 
-
+- `docs/`   → Block diagrams and documentation
+- `sim/`    → Testbenches for simulation
+- `src/`    → Verilog source files
 - `xdc/`    → Constraint files for Nexys A7  
 
-- `docs/`   → Block diagrams and documentation
+  
 
 
 ## **Lab 1 Goals: Architecture**
