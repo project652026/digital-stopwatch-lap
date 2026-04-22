@@ -79,7 +79,8 @@ The system is composed of several modules responsible for:
    
 ## **Block Diagram**
 
-<img width="903" height="575" alt="image" src="https://github.com/user-attachments/assets/077cde91-13c6-497c-aaa4-30b969ba58cd" />
+<img width="1337" height="783" alt="image" src="https://github.com/user-attachments/assets/90c30d9b-7fc8-414e-bf7a-84d13e2acd8d" />
+
 
 ## **Block Diagram Explanation**
  
@@ -116,8 +117,6 @@ Four buttons enter from the left:
 | `btnu` | Reset |
 | `btnr` | Capture lap |
 | `btnl` | Switch display to lap view |
- 
-> **Problem:** real buttons are noisy — they "bounce" and send dozens of false pulses in milliseconds. That's why they go into the `debouncer` first.
  
 ---
  
