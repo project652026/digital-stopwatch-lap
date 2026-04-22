@@ -186,6 +186,67 @@ It converts the binary number to **decimal digits** and drives the display by:
  
 ---
 
+## **Simulation and Verification**
+
+Simulation was performed in Xilinx Vivado to verify the functionality of the **newly developed modules**.
+
+> ⚠️ Note: Only the `stopwatch_counter` and `lap_register` modules were simulated in this lab.  
+> Other modules (`clk_en`, `debounce`, `display_driver`) were reused from previous labs without modification and were already verified earlier.
+
+---
+
+### **Simulation Approach**
+
+The following modules were tested using testbenches from the `sim/` directory:
+
+#### `stopwatch_counter`
+- Verified correct counting behavior with `en_10ms`
+- Tested **start/stop functionality**
+- Confirmed **reset behavior**
+- Ensured correct time increments (10 ms resolution)
+
+#### lap_register
+- Verified correct capture of time value on `lap_btn`
+- Confirmed stored value remains constant after capture
+- Ensured independence from the running counter
+
+---
+
+### **Simulation Results**
+
+#### **Stopwatch Counter Simulation**
+
+![Stopwatch Counter Simulation](docs/stopwatch_counter_sim.png)
+
+- Counter increments only when enabled  
+- Stops when disabled  
+- Resets correctly to zero  
+
+---
+
+#### **Lap Register Simulation**
+
+![Lap Register Simulation](docs/lap_register_sim.png)
+
+- Lap value captured correctly on button press  
+- Stored value remains unchanged after capture  
+- Counter continues running independently  
+
+---
+
+### **Testbench Files**
+
+The testbenches used for simulation:
+
+- [stopwatch_counter_tb.v](sim/stopwatch_counter_tb.v)  
+- [lap_register_tb.v](sim/lap_register_tb.v)  
+
+---
+
+### **Summary**
+
+Simulation confirms that the `stopwatch_counter` and `lap_register` modules behave according to specification and are ready for integration.
+
 ## **Project Structure**
 
 - `src/`    → Verilog source files  
