@@ -215,3 +215,10 @@ It converts the binary number to **decimal digits** and drives the display by:
 5. Debug and refine unit behavior
 6. Commit progress and updates to Git
 
+## Lab 3 Goals: Integration
+1. Integrate individual modules into the top-level entity
+2. Establish interconnections between all components
+3. Perform synthesis of the complete design
+4. Run initial hardware testing and validation
+5. Identify and resolve integration issues
+6. Commit progress and updates to Git in GitHub
