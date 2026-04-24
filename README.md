@@ -231,7 +231,7 @@ The following modules were tested using testbenches from the `sim/` directory:
 
 ---
 
-#### **Lap Register Simulation**
+[Lap Register Simulation](sim/lap_register_tb.v)
 
 ![Lap Register Simulation](docs/lap_register_sim.png)
 
@@ -240,14 +240,6 @@ The following modules were tested using testbenches from the `sim/` directory:
 - `lap_count` increments with each capture (0 → 3)  
 - Stored values remain stable after being written  
 
----
-
-### **Testbench Files**
-
-The testbenches used for simulation:
-
-- [stopwatch_counter_tb.v](sim/stopwatch_counter_tb.v)  
-- [lap_register_tb.v](sim/lap_register_tb.v)  
 
 ---
 
