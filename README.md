@@ -220,7 +220,7 @@ The following modules were tested using testbenches from the `sim/` directory:
 
 ### **Simulation Results**
 
-#### **Stopwatch Counter Simulation**
+[Stopwatch Counter Simulation](sim/stopwatch_counter_tb.v)  
 
 ![Stopwatch Counter Simulation](docs/stopwatch_counter_sim.png)
 
