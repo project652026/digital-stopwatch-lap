@@ -1,28 +1,3 @@
-// -----------------------------------------------------------
-//! @brief Binary to 7-segment decoder (common anode, 1 digit)
-//! @version 2.1
-//! @copyright (c) 2018-2026 Tomas Fryza, MIT license
-//!
-//! This module decodes a 4-bit binary input into control signals
-//! for a 7-segment common-anode display. It supports hexadecimal
-//! characters.
-//!
-//!     --a--
-//!    |     |
-//!    f     b
-//!    |     |
-//!     --g--
-//!    |     |
-//!    e     c
-//!    |     |
-//!     --d--
-//
-// Notes:
-// - Common anode: segment ON = 0, OFF = 1
-// - No decimal point is implemented
-// - Purely combinational (no clock)
-// -----------------------------------------------------------
-
 `timescale 1ns/1ps
 
 module bin2seg (
