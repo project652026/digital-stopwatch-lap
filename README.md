@@ -222,7 +222,7 @@ The following modules were tested using testbenches from the `sim/` directory:
 
 [Stopwatch Counter Simulation](sim/stopwatch_counter_tb.v)  
 
-
+![Stopwatch Counter Simulation](docs/stopwatch_counter_simulation.png)
 
 - Counter increments when `en = 1`  
 - Counter holds value when `en = 0`  
@@ -233,7 +233,7 @@ The following modules were tested using testbenches from the `sim/` directory:
 
 [Lap Register Simulation](sim/lap_register_tb.v)
 
-
+![Lap Register Simulation](docs/lap_register_simulation.png)
 
 - Lap values are captured on each `lap_btn` pulse  
 - `lap0`, `lap1`, and `lap2` store consecutive snapshots of `time_in`  
