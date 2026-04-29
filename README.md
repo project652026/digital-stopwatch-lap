@@ -282,3 +282,13 @@ Simulation confirms that the `stopwatch_counter` and `lap_register` modules beha
 4. Run initial hardware testing and validation
 5. Identify and resolve integration issues
 6. Commit progress and updates to Git in GitHub
+
+## Lab 4 Goals: Tuning
+1. Debug system behavior
+2. Identify performance and timing issues
+3. Optimize code and resource usage
+4. Fix bugs from integration
+5. Validate improvements through testing
+6. Refine and clean up codebase
+7. Document changes in Git
+8. Commit progress and updates to GitHub
