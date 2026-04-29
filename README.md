@@ -227,7 +227,7 @@ The following modules were tested using testbenches from the `sim/` directory:
 - Counter increments when `en = 1`  
 - Counter holds value when `en = 0`  
 - Reset (`rst = 1`) clears the counter to `0000`  
-- Counting resumes correctly after reset  
+- Counting resumes correctly after reset 
 
 ---
 
