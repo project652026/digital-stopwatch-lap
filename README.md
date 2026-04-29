@@ -252,6 +252,7 @@ Simulation confirms that the `stopwatch_counter` and `lap_register` modules beha
 - `docs/`   → Block diagrams and documentation
 - `sim/`    → Testbenches for simulation
 - `src/`    → Verilog source files
+- `vivado/` → Vivado project files  
 - `xdc/`    → Constraint files for Nexys A7  
 
   
